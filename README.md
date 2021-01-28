@@ -39,6 +39,7 @@ The CAFFEINE EXPLORER MVP is to achive authentication, full CRUD (front and back
 - Stylish design
 - Responsive design
 - Succesful deployment
+- Add comments to coffees
 
 <br>
 
