@@ -20,7 +20,7 @@
 
 ## Overview
 
-CAFFEINE EXPLORER is an app that allows the user to browse thru a selection of fictional coffees generated with Fakker. The user will be able to make an account and have more functionality avialable (create a favorites list, add, delete and edit coffees).  
+CAFFEINE EXPLORER is an app that allows the user to browse thru a selection of fictional coffees generated with Fakker. The user will be able to make an account and have more functionality avialable (leave a comment on a coffee).  
 
 
 <br>
