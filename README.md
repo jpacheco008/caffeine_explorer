@@ -61,19 +61,19 @@ The CAFFEINE EXPLORER MVP is to achive authentication, full CRUD (front and back
 
 #### Wireframes
 
-![https://github.com/jpacheco008/caffeine_explorer/blob/main/WireFrames_Landind:List.png](url)
+![Landing/List Wireframes](https://github.com/jpacheco008/caffeine_explorer/blob/main/WireFrames_Landind:List.png)
 
 - Landing/List Wireframes
 
-![https://github.com/jpacheco008/caffeine_explorer/blob/main/WireFrames_Item:Profile.png](url)
+![Item/Profile Wireframes](https://github.com/jpacheco008/caffeine_explorer/blob/main/WireFrames_Item:Profile.png)
 
 - Item/Profile Wireframes
 
-![https://github.com/jpacheco008/caffeine_explorer/blob/main/WireFrames_Create:Edit.png](url)
+![Create/Edit Wireframes](https://github.com/jpacheco008/caffeine_explorer/blob/main/WireFrames_Create:Edit.png)
 
 - Create/Edit Wireframes
 
-![https://github.com/jpacheco008/caffeine_explorer/blob/main/WireFrames_Registre:Login.png](url)
+![Register/Login Wreframes](https://github.com/jpacheco008/caffeine_explorer/blob/main/WireFrames_Registre:Login.png)
 
 - Register/Login Wreframes
 
@@ -114,7 +114,7 @@ src
 
 #### Component Tree
 
-[https://github.com/jpacheco008/caffeine_explorer/blob/main/Component_Tree.png](url)
+[Component_Tree](https://github.com/jpacheco008/caffeine_explorer/blob/main/Component_Tree.png)
 
 #### Time Estimates
 
@@ -138,7 +138,7 @@ src
 
 #### ERD Model
 
-![https://github.com/jpacheco008/caffeine_explorer/blob/main/ERD.png](url)
+![ERD_Model](https://github.com/jpacheco008/caffeine_explorer/blob/main/ERD.png)
 
 <br>
 
