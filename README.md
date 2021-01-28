@@ -35,7 +35,7 @@ The CAFFEINE EXPLORER MVP is to achive authentication, full CRUD (front and back
 
 - Authentification
 - Back end full CRUD
-- Front end full crud
+- Front end full CRUD
 - Stylish design
 - Responsive design
 - Succesful deployment
@@ -148,7 +148,7 @@ src
 ## Post-MVP
 
 - Another screen to see other user's favorite list
-- Add comments to coffees
+- Add and edit coffees
 - Add questionarie for coffee suggestions
 - Make it more like a sudo coffee subscription service 
 
