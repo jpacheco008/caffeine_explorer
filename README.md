@@ -44,7 +44,6 @@ The CAFFEINE EXPLORER MVP is to achive authentication, full CRUD (front and back
 
 ### Libraries and Dependencies
 
-> Use this section to list all supporting libraries and dependencies, and their role in the project. Below is an example - this needs to be replaced!
 
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
@@ -118,8 +117,6 @@ src
 [https://github.com/jpacheco008/caffeine_explorer/blob/main/Component_Tree.png](url)
 
 #### Time Estimates
-
-> Use this section to estimate the time necessary to build out each of the components you've described above.
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
