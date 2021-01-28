@@ -114,7 +114,7 @@ src
 
 #### Component Tree
 
-[Component_Tree](https://github.com/jpacheco008/caffeine_explorer/blob/main/Component_Tree.png)
+[Component_Tree](https://github.com/jpacheco008/caffeine_explorer/blob/main/component_tree.png)
 
 #### Time Estimates
 
