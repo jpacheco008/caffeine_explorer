@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
 
   # GET /comments/1
   def show
-    render json: @comment, include: :coffees
+    render json: @content, include: :coffees
   end
 
   # POST /comments
@@ -51,6 +51,6 @@ class CommentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def comment_params
-      params.require(:comment).permit(:comment, :user_id, :coffee_id)
+      params.require(:comment).permit(:content, :user_id, :coffee_id)
     end
 end
