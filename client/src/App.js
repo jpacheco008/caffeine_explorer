@@ -1,48 +1,60 @@
-import { useEffect, useState } from 'react';
-import {Route, Switch, useHistory} from 'react-router-dom'
-import Register from "./screens/Register"
-import MainContainer from "./containers/MainContainer"
-import { loginUser, registerUser, verifyUser, removeToken } from "./services/auth"
+import { useEffect, useState } from "react";
+import { Route, Switch, useHistory } from "react-router-dom";
+import Layout from "./layouts/Layout";
+import Register from "./screens/Register";
+import Login from "./screens/Login";
+import MainContainer from "./containers/MainContainer";
+import {
+  loginUser,
+  registerUser,
+  verifyUser,
+  removeToken,
+} from "./services/auth";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
-  const history = useHistory()
+  const history = useHistory();
 
   useEffect(() => {
     const handleVerify = async () => {
       const userData = await verifyUser();
       setCurrentUser(userData);
-    }
+    };
     handleVerify();
   }, []);
 
   const handleLogin = async (loginData) => {
     const userData = await loginUser(loginData);
     setCurrentUser(userData);
-    history.push('/')
-  }
+    history.push("/");
+  };
 
   const handleRegister = async (registerData) => {
     const userData = await registerUser(registerData);
-    setCurrentUser(userData)
-    history.push('/')
-  }
+    setCurrentUser(userData);
+    history.push("/");
+  };
 
   const handleLogout = () => {
     setCurrentUser(null);
-    localStorage.removeItem('authToken')
+    localStorage.removeItem("authToken");
     removeToken();
-  }
+  };
 
   return (
-    <div currentUser={currentUser} handleLogout={handleLogout}>
+    <Layout currentUser={currentUser} handleLogout={handleLogout}>
       <Switch>
-        <Route path='/register'>
-          <Register handleRegister={handleRegister}/>
+        <Route path="/login">
+          <Login handleLogin={handleLogin} />
         </Route>
-        
+        <Route path="/register">
+          <Register handleRegister={handleRegister} />
+        </Route>
+        <Route path="/">
+          <MainContainer currentUser={currentUser} />
+        </Route>
       </Switch>
-    </div>
+    </Layout>
   );
 }
 
