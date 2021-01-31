@@ -10,7 +10,7 @@ class CoffeesController < ApplicationController
 
   # GET /coffees/1
   def show
-    render json: @coffee
+    render json: @coffee, include: :comments
   end
 
   # POST /coffees
