@@ -7,11 +7,11 @@ import { getAllCoffees } from "../services/coffees";
 import {deleteComment, getAllComments, postComment, putComment} from "../services/comments"
 
 
-export default function MainConainer(props) {
+export default function MainContainer(props) {
   const [list, setList] = useState([]);
   const [comment, setComment] = useState([]);
   const history = useHistory();
-  const { currentUser } = props;
+  const currentUser = props;
 
   useEffect(() => {
     const fetchList = async () => {
@@ -56,10 +56,17 @@ export default function MainConainer(props) {
         <Profile currentUser={currentUser}/>
       </Route>
       <Route path='/coffees'>
-        <List coffees={list} comment={comment} currentUser={currentUser}/>
+        <List
+          coffees={list}
+          currentUser={currentUser}
+          comment={comment}
+          handleCreate={handleCreate}
+          handleDelete={handleDelete}
+          handleUpdate={handleUpdate}
+        />
       </Route>
       <Route path='/'>
-        <Landing />
+        <Landing currentUser={currentUser}/>
       </Route>
     </Switch>
   )

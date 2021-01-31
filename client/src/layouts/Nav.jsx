@@ -12,14 +12,14 @@ export default function Nav(props) {
           />
         </Link>
         <div className="welcome">
-          {props.user ? "Welcome " + props.user.username : ""}
+          {props.currentUser ? "Welcome " + props.currentUser.username : ""}
         </div>
         <nav>
           <ul>
             <Link to="/profile" className="nav-link">
               <li>Profile</li>
             </Link>
-            { !props.user ?
+            { !props.currentUser ?
               <div className='signins'>
               <Link to="/login" className="nav-link"><li>Login/Register</li></Link>
               </div>            

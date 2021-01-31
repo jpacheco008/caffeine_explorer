@@ -29,7 +29,7 @@ export default function Register(props) {
           name='username'
           value={username}
           onChange={handleChange}
-        />
+          />
       </label>
       <br/>
       <label>Email:
@@ -38,7 +38,7 @@ export default function Register(props) {
           name='email'
           value={email}
           onChange={handleChange}
-        />
+          />
       </label>
       <br/>
       <label>Password:
@@ -47,7 +47,7 @@ export default function Register(props) {
           name='password'
           value={password}
           onChange={handleChange}
-        />
+          />
       </label>
       <br />
       <button>Submit</button>
