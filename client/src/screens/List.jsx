@@ -17,22 +17,17 @@ export default function List(props) {
     return <Coffee
       id={coffee.id}
       blend_name={coffee.blend_name}
-      origin={coffee.origin}
-      variety={coffee.variety}
-      notes={coffee.notes}
-      intensifier={coffee.intensifier}
-      caffeine_level={coffee.caffeine_level}
-      imgURL={coffee}
+      imgURL={coffee.picture}
       currentUser={currentUser}
       key={index}
     />
   })
     return (
       <div>
-        <Search
+        {/* <Search
           onSubmit={handleSubmit}
           onChange={handleSearch}
-        />
+        /> */}
       {mappedCoffees}
     </div>
   )
