@@ -1,5 +1,5 @@
 
-import { useParams, useHistory } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useEffect, useState } from "react";
 import {deleteComment, getAllComments, postComment, putComment} from "../services/comments"
 import { getOneCoffee } from '../services/coffees'
@@ -9,7 +9,7 @@ export default function ItemDetail() {
   const [formData, setFormData] = useState({
     content: ''
   })
-  // const history = useHistory();
+
   const { id } = useParams();
   const { content } = formData;
 

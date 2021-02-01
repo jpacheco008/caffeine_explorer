@@ -9,7 +9,7 @@ import { getAllCoffees } from "../services/coffees";
 export default function MainContainer(props) {
   const [list, setList] = useState([]);
   const { currentUser } = props;
-
+  
   useEffect(() => {
     const fetchList = async () => {
       const coffeeData = await getAllCoffees();
@@ -29,6 +29,7 @@ export default function MainContainer(props) {
       <Route path='/coffees'>
         <List
           coffees={list}
+          currentUser={currentUser}
         />
       </Route>
       <Route path='/'>

@@ -2,19 +2,21 @@ import { getFavorites } from '../services/favorites'
 import { useState, useEffect } from 'react';
 import Coffee from '../components/Coffee'
 
+
 export default function Profile(props) {
-  const [favorites, setFavorites] = useState([]);
-  console.log(favorites);
-  // console.log(favorites.favorites[0].coffee.blend_name);
+  
+  const [profileData, setProfileData] = useState([]);
+  const id = props.currentUser.id;
+
   useEffect(() => {
     const fetchFavorites = async () => {
-      const favoritesData = await getFavorites(props.currentUser.id);
-      setFavorites(favoritesData);
+      const profileData = await getFavorites(id);
+      setProfileData(profileData);
     };
     fetchFavorites();
-  }, [props.currentUser.id]);
+  }, [id]);
 
-  const favoritesList = favorites.favorites.map((list, index) => {
+  const favoritesList = profileData.favorites.map((list, index) => {
     return <Coffee
       id={list.coffee.id}
       blend_name={list.coffee.blend_name}
