@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom'
 import { useEffect, useState } from "react";
 import {deleteComment, postComment, putComment} from "../services/comments"
 import { getOneCoffee } from '../services/coffees'
+import '../styles/ItemDetail.css'
 
 export default function ItemDetail() {
   const [coffee, setCoffee] = useState(null)
@@ -82,35 +83,45 @@ export default function ItemDetail() {
       comments: [...prevState.comments, content]
     }))
   }
-
-   
+ 
   return (
     coffee ?   
-    <div key={coffee.id}>
-      <h3>{coffee.blend_name}</h3>
-      <h5>{coffee.origin}</h5>
-      <h5>{coffee.variety}</h5>
-      <h5>{coffee.notes}</h5>
-      <h5>{coffee.intensifier}</h5>
-      <h5>{coffee.caffeine_level}</h5>
-      <img src={coffee.picture} alt="Can't find the beans"/> 
-    <form onSubmit={(e) => {
-          e.preventDefault();          
-          handleCreate({ ...formData, coffee_id: id });
-    }}>
-      <h4>Comments</h4>
+      <div key={coffee.id}>
+        <div className='coffee-data'>
+          <div className='name-pic-container'>
+      <h3 className='blend-name'>{coffee.blend_name}</h3>
+      <img className='image' src={coffee.picture} alt="Can't find the beans"/> 
+          </div>
+          <div className='coffee-stats-container'>           
+      <h5 className='coffee-stats'>Origin:<br />{coffee.origin}</h5>
+      <h5 className='coffee-stats'>Variety:<br />{coffee.variety}</h5>
+      <h5 className='coffee-stats'>Notes:<br />{coffee.notes}</h5>
+      <h5 className='coffee-stats'>Intensifier:<br />{coffee.intensifier}</h5>
+      <h5 className='coffee-stats'>Caffeine Level:<br />{coffee.caffeine_level}</h5>
+          </div>
+        </div>
+      <div className='comments-container'>
+        <form
+          className='comments-form'
+          onSubmit={(e) => {
+            e.preventDefault();          
+            handleCreate({ ...formData, coffee_id: id });
+          }}>
+      {/* <h4>Comments</h4> */}
         <input
           type='text'
           name='content'
+          placeholder='Leave a comment'
           value={content}
           onChange={handleChange}
-        />
+          />
       <br/>
           <button>Submit</button>
     </form>
       <br/>
         <div>{comments}
         </div>
-    </div>: <div>Can't find the beans</div>
+      </div>
+    </div>: <>Looking for the beans</>
   )
 }

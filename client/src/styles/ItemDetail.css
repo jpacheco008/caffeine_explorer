@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Farsan&display=swap');
+
+.coffee-data{
+  display: flex;
+  justify-content: space-around;
+  margin: 30px auto;
+}
+.name-pic-container{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+.blend-name{
+  font-size: 40px;
+  color: black;
+  text-align: center;
+}
+.image{
+  width: 400px;
+}
+.coffee-stats-container{
+  margin: 40px 0;
+}
+
+.coffee-stats{
+  font-family: 'Farsan', cursive;
+  font-size: 20px;
+  margin: 15px auto;
+}
+.comments-container{
+  margin: 10px 40px;
+}
