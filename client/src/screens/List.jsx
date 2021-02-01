@@ -1,17 +1,18 @@
 import Coffee from '../components/Coffee'
-import Search from '../components/Search'
+// import Search from '../components/Search'
 // import {useState} from 'react'
 
 export default function List(props) {
   const { coffees, currentUser } = props
- 
+  // const [quieredProducts, setQuieredProducts] = useState([]);
   
-  const handleSearch = (event) => {
-    coffees.filter((coffee) =>
-    coffee.name.toLowerCase().includes(event.target.value.toLowerCase())
-    );
-  };
-  const handleSubmit = (event) => event.preventDefault();
+  // const handleSearch = (event) => {
+  //   const newQuieredProducts = coffees.filter((coffee) =>
+  //   coffee.name.toLowerCase().includes(event.target.value.toLowerCase())
+  //   );
+  //   setQuieredProducts(newQuieredProducts)
+  // };
+  // const handleSubmit = (event) => event.preventDefault();
   
   const mappedCoffees = coffees.map((coffee, index) => {
     return <Coffee

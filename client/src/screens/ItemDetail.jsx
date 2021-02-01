@@ -23,7 +23,7 @@ export default function ItemDetail() {
     const updatedComment = await putComment(id, commentData);
     setCoffee(prevState => ({
       ...prevState,
-      comments: prevState.comments.map(comment => {
+      comments: prevState.comments.map((comment, key) => {
         return comment.id === Number(id) ? updatedComment : comment
       })
     }))
