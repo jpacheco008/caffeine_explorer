@@ -5,14 +5,14 @@ import Coffee from '../components/Coffee'
 export default function Profile(props) {
   const [favorites, setFavorites] = useState([]);
   console.log(favorites);
-  console.log(favorites.favorites[0].coffee.blend_name);
+  // console.log(favorites.favorites[0].coffee.blend_name);
   useEffect(() => {
     const fetchFavorites = async () => {
       const favoritesData = await getFavorites(props.currentUser.id);
       setFavorites(favoritesData);
     };
     fetchFavorites();
-  }, []);
+  }, [props.currentUser.id]);
 
   const favoritesList = favorites.favorites.map((list, index) => {
     return <Coffee

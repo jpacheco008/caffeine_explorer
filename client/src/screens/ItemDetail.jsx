@@ -1,13 +1,17 @@
 
-import { useParams,useHistory } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
 import { useEffect, useState } from "react";
 import {deleteComment, getAllComments, postComment, putComment} from "../services/comments"
 import { getOneCoffee } from '../services/coffees'
 
 export default function ItemDetail() {
   const [coffee, setCoffee] = useState(null)
-  const history = useHistory();
+  const [formData, setFormData] = useState({
+    content: ''
+  })
+  // const history = useHistory();
   const { id } = useParams();
+  const { content } = formData;
 
   useEffect(() => {
     const fecthCoffee = async () => {
@@ -15,14 +19,8 @@ export default function ItemDetail() {
       setCoffee(coffeeData)
     }
     fecthCoffee();
-  }, [])
+  }, [id])
  
-  // const handleCreate = async (commentData) => {
-  //   const newComment = await postComment(commentData);
-  //   setComment(prevState => [...prevState, newComment])
-  //   history.push('/coffees')
-  // }
-
   // const handleDelete = async (id) => {
   //   await deleteComment(id);
   //   setComment(prevState => prevState.filter(comment => {
@@ -40,7 +38,23 @@ export default function ItemDetail() {
   const coments = coffee && coffee.comments.map((coment) => {
      return coment.content
   })
+  
+  const handleCreate = async (commentData) => {
+    const content = await postComment(commentData);
+    setCoffee(prevState => ({
+      ...prevState, 
+      comments: [...prevState.comments, content]
+    }))
+  }
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }))
+  }
+   
   return (
     coffee ?   
     <div>
@@ -51,7 +65,21 @@ export default function ItemDetail() {
       <h5>{coffee.intensifier}</h5>
       <h5>{coffee.caffeine_level}</h5>
       <img src={coffee.picture} alt="Can't find the beans"/> 
-      <h5>{coments}</h5>
+    <form onSubmit={(e) => {
+          e.preventDefault();          
+          handleCreate({ ...formData, coffee_id: id });
+    }}>
+      <h4>Comments</h4>
+        <input
+          type='text'
+          name='content'
+          value={content}
+          onChange={handleChange}
+        />
+      <br/>
+      <button>Submit</button>
+    </form>
+    <h5>{coments}</h5>
     </div>: <div>Can't find the beans</div>
   )
 }
