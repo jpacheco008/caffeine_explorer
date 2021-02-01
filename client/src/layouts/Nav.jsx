@@ -1,9 +1,13 @@
 import { Link } from 'react-router-dom'
 import logo from '../assets/logo.png'
+import "../styles/Nav.css"
 
 export default function Nav(props) {
   return (
     <div className="nav-container">
+        <div className="welcome">
+          {props.currentUser ? "Welcome " + props.currentUser.username : ""}
+        </div>
         <Link to="/">
           <img
             className="logo"
@@ -11,9 +15,6 @@ export default function Nav(props) {
             alt="Caffeine Explorer"
           />
         </Link>
-        <div className="welcome">
-          {props.currentUser ? "Welcome " + props.currentUser.username : ""}
-        </div>
         <nav>
           <ul>
             <Link to="/profile" className="nav-link">
@@ -24,7 +25,7 @@ export default function Nav(props) {
               <Link to="/login" className="nav-link"><li>Login/Register</li></Link>
               </div>            
               :
-              <button onClick={props.handleLogout}>Sing Out</button>            
+              <li className='nav-link' onClick={props.handleLogout}>Sing Out</li>            
             }
           </ul>
         </nav>
