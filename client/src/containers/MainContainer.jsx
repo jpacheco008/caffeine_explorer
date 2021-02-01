@@ -8,7 +8,7 @@ import { getAllCoffees } from "../services/coffees";
 
 export default function MainContainer(props) {
   const [list, setList] = useState([]);
-  const currentUser = props;
+  const { currentUser } = props;
 
   useEffect(() => {
     const fetchList = async () => {
@@ -21,14 +21,7 @@ export default function MainContainer(props) {
   return (
     <Switch>
       <Route path='/coffees/:id'>
-        <ItemDetail
-          // coffees={list}
-          // comment={comment}
-          // currentUser={currentUser}
-          // handleCreate={handleCreate}
-          // handleDelete={handleDelete}
-          // handleUpdate={handleUpdate}
-        />
+        <ItemDetail />
       </Route>
       <Route path='/profile'>
         <Profile currentUser={currentUser}/>

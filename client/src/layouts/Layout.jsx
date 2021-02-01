@@ -4,7 +4,8 @@ export default function Layout(props) {
   
   return (
     <div>
-      <Nav currentUser={props.currentUser}/>
+      <Nav currentUser={props.currentUser}
+        handleLogout={props.handleLogout} />
       {props.children}
     </div>
   )

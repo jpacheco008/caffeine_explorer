@@ -24,10 +24,7 @@ export default function Nav(props) {
               <Link to="/login" className="nav-link"><li>Login/Register</li></Link>
               </div>            
               :
-              <Link to="/logout" className="nav-link">
-                <li>Sign Out</li>
-            </Link>   
-              
+              <button onClick={props.handleLogout}>Sing Out</button>            
             }
           </ul>
         </nav>

@@ -5,7 +5,6 @@ import {deleteComment, getAllComments, postComment, putComment} from "../service
 import { getOneCoffee } from '../services/coffees'
 
 export default function ItemDetail() {
-  const [comment, setComment] = useState([]);
   const [coffee, setCoffee] = useState(null)
   const history = useHistory();
   const { id } = useParams();
@@ -17,40 +16,31 @@ export default function ItemDetail() {
     }
     fecthCoffee();
   }, [])
-  // useEffect(() => {
-  //   const fetchComment = async () => {
-  //     const commentData = await getAllComments()
-  //     setComment(commentData)
-  //   }
-  //   fetchComment();
-  // }, []);
+ 
+  // const handleCreate = async (commentData) => {
+  //   const newComment = await postComment(commentData);
+  //   setComment(prevState => [...prevState, newComment])
+  //   history.push('/coffees')
+  // }
 
-  const handleCreate = async (commentData) => {
-    const newComment = await postComment(commentData);
-    setComment(prevState => [...prevState, newComment])
-    history.push('/coffees')
-  }
+  // const handleDelete = async (id) => {
+  //   await deleteComment(id);
+  //   setComment(prevState => prevState.filter(comment => {
+  //     return comment.id !== id
+  //   }))
+  // }
 
-  const handleDelete = async (id) => {
-    await deleteComment(id);
-    setComment(prevState => prevState.filter(comment => {
-      return comment.id !== id
-    }))
-  }
-
-  const handleUpdate = async (id, commentData) => {
-    const updatedComment = await putComment(id, commentData);
-    setComment(prevState => prevState.map(comment => {
-      return comment.id === Number(id) ? updatedComment : comment
-    }))
-    history.push('/coffees')
-  }
+  // const handleUpdate = async (id, commentData) => {
+  //   const updatedComment = await putComment(id, commentData);
+  //   setComment(prevState => prevState.map(comment => {
+  //     return comment.id === Number(id) ? updatedComment : comment
+  //   }))
+  //   history.push('/coffees')
+  // }
   const coments = coffee && coffee.comments.map((coment) => {
      return coment.content
   })
 
-          // id, blend_name, origin, variety, notes, intensifier,
-          // caffeine_level, imgURL
   return (
     coffee ?   
     <div>
