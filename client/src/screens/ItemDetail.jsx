@@ -1,7 +1,7 @@
 
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from "react";
-import {deleteComment, getAllComments, postComment, putComment} from "../services/comments"
+import {deleteComment, postComment, putComment} from "../services/comments"
 import { getOneCoffee } from '../services/coffees'
 
 export default function ItemDetail() {
@@ -21,23 +21,33 @@ export default function ItemDetail() {
     fecthCoffee();
   }, [id])
  
-  // const handleDelete = async (id) => {
-  //   await deleteComment(id);
-  //   setComment(prevState => prevState.filter(comment => {
-  //     return comment.id !== id
-  //   }))
-  // }
-
-  // const handleUpdate = async (id, commentData) => {
-  //   const updatedComment = await putComment(id, commentData);
-  //   setComment(prevState => prevState.map(comment => {
-  //     return comment.id === Number(id) ? updatedComment : comment
-  //   }))
-  //   history.push('/coffees')
-  // }
-  const coments = coffee && coffee.comments.map((coment) => {
-     return coment.content
+  const handleUpdate = async (e, id, commentData) => {
+    const updatedComment = await putComment(id, commentData);
+    setCoffee(prevState => ({
+      ...prevState,
+      comments: prevState.comments.map(comment => {
+        return comment.id === Number(id) ? updatedComment : comment
+      })
+    }))
+  }
+  const handleDelete = async (e, id) => {
+    await deleteComment(id);
+    setCoffee(prevState => ({
+      ...prevState,
+      comments: prevState.comments.filter(comment => {
+      return comment.id !== id})
+    }))
+  }
+  const comments = coffee && coffee.comments.map((comment) => {
+    return (
+      <div key={coffee.comments.id}>
+        < h5> { comment.content }</h5 >
+        <button onClick={(e)=>handleDelete(e, comment.id)}>Delete</button>
+        <button onClick={(e)=>handleUpdate(e, comment.id)}>Edit</button>
+      </div>
+    )
   })
+  console.log(coffee);
   
   const handleCreate = async (commentData) => {
     const content = await postComment(commentData);
@@ -79,7 +89,8 @@ export default function ItemDetail() {
       <br/>
       <button>Submit</button>
     </form>
-    <h5>{coments}</h5>
+        <div>{comments}
+        </div>
     </div>: <div>Can't find the beans</div>
   )
 }
