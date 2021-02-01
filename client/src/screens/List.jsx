@@ -1,4 +1,5 @@
 import Coffee from '../components/Coffee'
+import "../styles/List.css"
 // import Search from '../components/Search'
 // import {useState} from 'react'
 
@@ -24,7 +25,7 @@ export default function List(props) {
     />
   })
     return (
-      <div>
+      <div className='coffees-list'>
         {/* <Search
           onSubmit={handleSubmit}
           onChange={handleSearch}
