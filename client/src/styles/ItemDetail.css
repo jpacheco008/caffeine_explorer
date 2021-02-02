@@ -20,6 +20,7 @@
   font-size: 40px;
   font-family: 'Farsan', cursive;
   color: black;
+  font-weight: 800;
 }
 .blend-name{
   font-size: 40px;
@@ -65,3 +66,61 @@
 .edit-icons:hover {
   cursor: pointer;
   }
+  @media only screen and (min-width: 602px) and (max-width: 1130px) {
+    .coffee-data{
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+    }
+    .coffee-stats-container{
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      margin: 10px;
+    }
+    .name-pic-container{
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      margin: 10px auto;
+    }
+    .image{
+      width: 400px;
+      border-radius: 8px;
+      margin: 10px auto;
+    }
+    .coffee-stats{
+      text-align: center;
+      margin: 3px;
+    }
+  }
+  @media only screen and (max-width: 601px) {
+    .coffee-data{
+      display: flex;
+      flex-flow: column;
+      margin: 10px auto;
+    }
+    .name-link-container{
+      margin: 8px;
+    }
+    .name-pic-container{
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      margin: 10px auto;
+    }
+    .image{
+      width: 300px;
+    }
+    .coffee-stats-container{
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      margin: 10px 0;
+    }
+    .coffee-stats{
+      text-align: center;
+      margin: 3px;
+    }
+  }
+  
