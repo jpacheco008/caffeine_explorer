@@ -16,10 +16,14 @@ export default function Nav(props) {
           />
         </Link>
         <nav>
-          <ul>
+        <ul>
+          {props.currentUser ?
             <Link to="/profile" className="nav-link">
-              <li>Profile</li>
+            <li>Profile</li>
             </Link>
+            : null
+          }
+            
             { !props.currentUser ?
               <div className='signins'>
               <Link to="/login" className="nav-link"><li>Login/Register</li></Link>
