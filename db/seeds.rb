@@ -10,10 +10,6 @@ Comment.destroy_all
 Coffee.destroy_all
 User.destroy_all
 
-@admin = User.create!(username: 'master', email: 'master@email.com', password: '098765')
-
-puts "#{User.count} users created"
-
 @images = ['https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.JPG',
 'https://media3.s-nbcnews.com/j/newscms/2019_33/2203981/171026-better-coffee-boost-se-329p_67dfb6820f7d3898b5486975903c2e51.fit-1240w.jpg',
 'https://images.squarespace-cdn.com/content/v1/50437f72c4aa994481345d33/1598294782479-1R9TMFGS3VWSEP3ZTDAV/ke17ZwdGBToddI8pDm48kPqQfq0L3n3wpHIsRapTfg8UqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKczo5Zn4xktlpMsMj-QlHXeMfNK6GwvtVkYEWiR8XAPyD3GfLCe_DXOSC_YcAacWL_/Latte+Art.jpg?format=1500w',
