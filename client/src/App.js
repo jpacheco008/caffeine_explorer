@@ -40,7 +40,7 @@ function App() {
     localStorage.removeItem("authToken");
     removeToken();
   };
-
+  //change
   return (
     <Layout currentUser={currentUser} handleLogout={handleLogout}>
       <Switch>

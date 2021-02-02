@@ -107,7 +107,6 @@ export default function ItemDetail() {
             e.preventDefault();          
             handleCreate({ ...formData, coffee_id: id });
           }}>
-      {/* <h4>Comments</h4> */}
         <input
           type='text'
           name='content'
