@@ -6,7 +6,7 @@ export default function Coffee(props) {
   return (
     <Link className='coffee' to={`/coffees/${id}`}>
       <div className='details-container'>
-      <h3 className='blend-name'>{blend_name}</h3>
+      <h3 className='coffee-blend-name'>{blend_name}</h3>
       <img className='coffee-img' src={imgURL} alt="Can't find the beans"/>
       </div>
     </Link>

@@ -4,6 +4,7 @@ import Layout from "./layouts/Layout";
 import Register from "./screens/Register";
 import Login from "./screens/Login";
 import MainContainer from "./containers/MainContainer";
+import './App.css'
 import {
   loginUser,
   registerUser,
