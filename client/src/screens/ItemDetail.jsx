@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { useEffect, useState } from "react";
 import {deleteComment, postComment, putComment} from "../services/comments"
 import { getOneCoffee } from '../services/coffees'
@@ -102,7 +102,10 @@ export default function ItemDetail() {
       <div key={coffee.id}>
         <div className='coffee-data'>
           <div className='name-pic-container'>
+            <div className='name-link-container'>
+      <Link to='/coffees' className='link-coffees'>Coffes/</Link>
       <h3 className='blend-name'>{coffee.blend_name}</h3>
+            </div>
       <img className='image' src={coffee.picture} alt="Can't find the beans"/> 
           </div>
           <div className='coffee-stats-container'>           

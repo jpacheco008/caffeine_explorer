@@ -10,10 +10,23 @@
   flex-flow: column;
   justify-content: center;
 }
+.name-link-container{
+  display: flex;
+  align-items: center;
+  margin: 15px;
+}
+.link-coffees{
+  text-decoration: none;
+  font-size: 40px;
+  font-family: 'Farsan', cursive;
+  color: black;
+}
 .blend-name{
   font-size: 40px;
   color: black;
   text-align: center;
+  font-family: 'Farsan', cursive;
+  margin: 0;
 }
 .image{
   width: 400px;
@@ -43,10 +56,11 @@
   align-items: center;
   width: 500px;
 }
-.edit-icons-container{
-
-}
 .edit-icons{
   width: 20px;
   height: 20px;
+  margin: 8px;
 }
+.edit-icons:hover {
+  cursor: pointer;
+  }
