@@ -2,16 +2,17 @@ import { useParams, Link } from 'react-router-dom'
 import { useEffect, useState } from "react";
 import {deleteComment, postComment, putComment} from "../services/comments"
 import { getOneCoffee } from '../services/coffees'
+import {postFavorites} from '../services/favorites'
 import '../styles/ItemDetail.css'
 
-export default function ItemDetail() {
+export default function ItemDetail(props) {
   const [coffee, setCoffee] = useState(null)
   const [formData, setFormData] = useState({content: ''})
   const [editMode, setEditMode] = useState(false)
   const [currentEdit, setCurrentEdit] = useState(null)
   const { id } = useParams();
   const { content } = formData;
-  
+  console.log(props.currentUser);
   useEffect(() => {
     const fecthCoffee = async () => {
       const coffeeData = await getOneCoffee(id);
@@ -96,7 +97,11 @@ export default function ItemDetail() {
       comments: [...prevState.comments, content]
     }))
   }
- 
+  const addToFavorites = async (favoriteData) => {
+    const favorite = await postFavorites(favoriteData)
+    // user_id: props.currentUser.id,
+    // coffee_id: coffee.id;
+  }
   return (
     coffee ?   
       <div key={coffee.id}>
@@ -113,7 +118,10 @@ export default function ItemDetail() {
       <h5 className='coffee-stats'>Variety:<br />{coffee.variety}</h5>
       <h5 className='coffee-stats'>Notes:<br />{coffee.notes}</h5>
       <h5 className='coffee-stats'>Intensifier:<br />{coffee.intensifier}</h5>
-      <h5 className='coffee-stats'>Caffeine Level:<br />{coffee.caffeine_level}</h5>
+            <h5 className='coffee-stats'>Caffeine Level:<br />{coffee.caffeine_level}</h5>
+            <h5 className='add-fav'
+              onClick={() => addToFavorites(coffee.id)}
+            >+ Add to Favorites</h5>
           </div>
         </div>
       <div className='comments-container'>

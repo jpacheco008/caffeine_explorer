@@ -42,6 +42,14 @@
   font-size: 20px;
   margin: 15px auto;
 }
+.add-fav{
+  font-family: 'Farsan', cursive;
+  font-size: 20px;
+  margin: 15px auto;
+}
+.add-fav:hover{
+  cursor: pointer;
+}
 .comments-container{
   margin: 10px 80px;
 }

@@ -21,7 +21,7 @@ export default function MainContainer(props) {
   return (
     <Switch>
       <Route path='/coffees/:id'>
-        <ItemDetail />
+        <ItemDetail currentUser={currentUser}/>
       </Route>
       <Route path='/profile'>
         <Profile currentUser={currentUser}/>
