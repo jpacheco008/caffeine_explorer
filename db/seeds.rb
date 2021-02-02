@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 Comment.destroy_all
+Favorite.destroy_all
 Coffee.destroy_all
 User.destroy_all
 
