@@ -5,7 +5,7 @@ export const getFavorites = async (id) => {
   return resp.data
 }
 export const postFavorites = async (favoriteData) => {
-  const resp = await api.post('/favorites', { favotire: favoriteData });
+  const resp = await api.post('/favorites', { favorite: favoriteData });
   return resp.data
 }
 export const deleteFavorites = async (id) => {

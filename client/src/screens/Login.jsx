@@ -21,7 +21,9 @@ export default function Login(props) {
     <form onSubmit={(e) => {
       e.preventDefault();
       handleLogin(formData);
-    }}>
+    }}
+      className='login-form'
+    >
       <h4>Login</h4>
       <label>Username:
         <input

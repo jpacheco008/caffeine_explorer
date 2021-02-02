@@ -12,7 +12,7 @@ export default function ItemDetail(props) {
   const [currentEdit, setCurrentEdit] = useState(null)
   const { id } = useParams();
   const { content } = formData;
-  console.log(props.currentUser);
+  
   useEffect(() => {
     const fecthCoffee = async () => {
       const coffeeData = await getOneCoffee(id);
@@ -25,7 +25,7 @@ export default function ItemDetail(props) {
     const updatedComment = await putComment(id, commentData);
     setCoffee(prevState => ({
       ...prevState,
-      comments: prevState.comments.map((comment, index) => {
+      comments: prevState.comments.map((comment) => {
         return comment.id === Number(id) ? updatedComment : comment
       })
     }))
@@ -49,7 +49,7 @@ export default function ItemDetail(props) {
 
   const comments = coffee && coffee.comments.map((comment) => {
     return (
-      <div key={coffee.comments.id} className='posted-comment'>
+      <div key={comment.id} className='posted-comment'>
         <h5 className='comment'> { editMode && currentEdit === comment.id? 
         <form onSubmit={(e) => {
           e.preventDefault();          
@@ -97,11 +97,14 @@ export default function ItemDetail(props) {
       comments: [...prevState.comments, content]
     }))
   }
-  const addToFavorites = async (favoriteData) => {
-    const favorite = await postFavorites(favoriteData)
-    // user_id: props.currentUser.id,
-    // coffee_id: coffee.id;
+  const addToFavorites = async () => {
+    const data = {
+      user_id: props.currentUser.id,
+      coffee_id: coffee.id
+    }
+    await postFavorites(data)
   }
+
   return (
     coffee ?   
       <div key={coffee.id}>

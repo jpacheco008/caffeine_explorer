@@ -1,4 +1,4 @@
-import { getFavorites } from "../services/favorites";
+import { getFavorites, deleteFavorites } from "../services/favorites";
 import { useState, useEffect } from "react";
 import Coffee from "../components/Coffee";
 import "../styles/Profile.css";
@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 export default function Profile(props) {
   const [profileData, setProfileData] = useState([]);
-
+  
   useEffect(() => {
     const fetchFavorites = async () => {
       const id = props.currentUser && props.currentUser.id;
@@ -15,6 +15,15 @@ export default function Profile(props) {
     };
     fetchFavorites();
   }, [props.currentUser]);
+
+  const handleFavDelete = async (id) => {
+    await deleteFavorites(id)
+    setProfileData(prevState => ({
+      ...prevState,
+      favorites: prevState.favorites.filter(favorite => {
+      return favorite.id !== id})
+    }))
+  }
 
   return (
     <div className="profile-list-container">
@@ -26,14 +35,16 @@ export default function Profile(props) {
           {profileData.favorites &&
             profileData.favorites.map((list, index) => {
               return (
-                <div className='profile-coffee-container'>
+                <div className='profile-coffee-container' key={index}>
                 <Coffee
                   id={list.coffee.id}
                   blend_name={list.coffee.blend_name}
                   imgURL={list.coffee.picture}
-                  key={index}
                   />
-                <button className='profile-coffee-button'>Remove</button>
+                  <button
+                    className='profile-coffee-button'
+                    onClick={()=>{handleFavDelete(list.id)}}
+                  >Remove</button>
                   </div>
               );
             })}
