@@ -1,3 +1,6 @@
+/* .body{
+  background-image: url('https://i.pinimg.com/originals/ff/19/a8/ff19a80bdca8fa636b4aa6fdea250fe9.jpg');
+} */
 .coffees-list {
   display: flex;
   flex-flow: row wrap;

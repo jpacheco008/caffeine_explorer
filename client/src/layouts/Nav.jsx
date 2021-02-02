@@ -6,7 +6,7 @@ export default function Nav(props) {
   return (
     <div className="nav-container">
         <div className="welcome">
-          {props.currentUser ? "Welcome " + props.currentUser.username : ""}
+          {props.currentUser ? "Welcome, " + props.currentUser.username : ""}
         </div>
         <Link to="/">
           <img

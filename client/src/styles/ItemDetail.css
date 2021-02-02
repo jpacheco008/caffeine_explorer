@@ -28,5 +28,25 @@
   margin: 15px auto;
 }
 .comments-container{
-  margin: 10px 40px;
+  margin: 10px 80px;
+}
+.comments-form{
+  display: flex;
+}
+.input-bar{
+  width: 500px;
+  height: 30px;
+}
+.posted-comment{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 500px;
+}
+.edit-icons-container{
+
+}
+.edit-icons{
+  width: 20px;
+  height: 20px;
 }

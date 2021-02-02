@@ -11,7 +11,7 @@ export default function ItemDetail() {
   const [currentEdit, setCurrentEdit] = useState(null)
   const { id } = useParams();
   const { content } = formData;
-
+  
   useEffect(() => {
     const fecthCoffee = async () => {
       const coffeeData = await getOneCoffee(id);
@@ -24,7 +24,7 @@ export default function ItemDetail() {
     const updatedComment = await putComment(id, commentData);
     setCoffee(prevState => ({
       ...prevState,
-      comments: prevState.comments.map((comment, key) => {
+      comments: prevState.comments.map((comment, index) => {
         return comment.id === Number(id) ? updatedComment : comment
       })
     }))
@@ -48,30 +48,43 @@ export default function ItemDetail() {
 
   const comments = coffee && coffee.comments.map((comment) => {
     return (
-      <div key={coffee.comments.id}>
-        < h5> { editMode && currentEdit === comment.id? 
+      <div key={coffee.comments.id} className='posted-comment'>
+        <h5 className='comment'> { editMode && currentEdit === comment.id? 
         <form onSubmit={(e) => {
           e.preventDefault();          
             handleUpdate(e, comment.id, formData)
             setEditMode(false)
             setCurrentEdit(null)
         }}>
-      <h4>Edit Comment</h4>
         <input
           type='text'
           name='content'
+          placeholder='Edit Comment'
           value={content}
           onChange={handleChange}
         />
       <br/>
       <button>Submit</button>
           </form>
-          : comment.content }</h5 >
-        <button onClick={(e)=>handleDelete(e, comment.id)}>Delete</button>
-        <button onClick={(e)=>enterEditMode(e, comment.id)}>Edit</button>
+          : comment.content}</h5 >
+        <div className='edit-icons-container'>
+        <img
+          className='edit-icons'
+          src='https://cdn1.iconfinder.com/data/icons/internet-28/48/8-512.png'
+          alt='edit'
+          onClick={(e)=>enterEditMode(e, comment.id)}
+          />
+        <img
+          className='edit-icons'
+          src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlK-PGF6t3CNUCzN8V0KIirZjBh6cJMmZOtA&usqp=CAU'
+          alt='delete'
+          onClick={(e)=>handleDelete(e, comment.id)}
+          />
+        </div>
       </div>
     )
   })
+
   const enterEditMode = (e, id) => {
     setEditMode(true)
     setCurrentEdit(id)
@@ -108,6 +121,7 @@ export default function ItemDetail() {
             handleCreate({ ...formData, coffee_id: id });
           }}>
         <input
+          className='input-bar'
           type='text'
           name='content'
           placeholder='Leave a comment'

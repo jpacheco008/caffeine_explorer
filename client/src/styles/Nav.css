@@ -7,6 +7,7 @@
   background-color:#574106;
   height:150px;
   border-bottom: 1px groove black;
+  color: white;
 }
 .logo{
   width: 150px;
@@ -22,7 +23,7 @@ li{
   display: inline;
 }
 .nav-link{
-  color: black;
+  color: white;
   margin: 10px;
   font-family: 'Parisienne', cursive;
   text-decoration: none;
@@ -32,11 +33,11 @@ li{
 .nav-link:hover {
 text-decoration: underline;
 color: white;
+cursor: pointer;
 }
 
 .site-title{
   color: white;
-
 }
 
 nav ul{
