@@ -30,6 +30,7 @@
 }
 .image{
   width: 400px;
+  border-radius: 8px;
 }
 .coffee-stats-container{
   margin: 40px 0;
