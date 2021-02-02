@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+
+.profile-welcome{
+  margin: 20px auto;
+  text-align: center;
+  font-family: 'Parisienne', cursive;
+  font-size: 35px;
+  color: #5bc22f;
+}
+.profile-list{
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 auto;
+  justify-content: center;
+  margin: 30px;
+}

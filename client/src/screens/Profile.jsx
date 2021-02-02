@@ -1,7 +1,7 @@
 import { getFavorites } from '../services/favorites'
 import { useState, useEffect } from 'react';
 import Coffee from '../components/Coffee'
-
+import '../styles/Profile.css'
 
 export default function Profile(props) {
   
@@ -18,15 +18,17 @@ export default function Profile(props) {
 
   return (  
     <div>
-    <h3>Welcome back {props.currentUser && props.currentUser.username}</h3>
-    {profileData.favorites && profileData.favorites.map((list, index) => {
-    return <Coffee
+    <h3 className='profile-welcome'>{props.currentUser && props.currentUser.username}'s favorites list:</h3>
+      <div className='profile-list'>
+      {profileData.favorites && profileData.favorites.map((list, index) => {
+        return <Coffee
       id={list.coffee.id}
       blend_name={list.coffee.blend_name}
       imgURL={list.coffee.picture}
       key={index}
-    />
-  })}
+      />
+    })}
+    </div>
     </div>
   )
 }
