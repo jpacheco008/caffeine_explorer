@@ -29,3 +29,13 @@
   width: 60%;
   text-align: center;
 }
+@media only screen and (min-width: 602px) and (max-width: 1130px) {
+  .landing-container{
+    height: 100vw;
+  }
+}
+@media only screen and (max-width: 601px) {
+  .landing-container{
+    height: 100vw;
+  }
+}

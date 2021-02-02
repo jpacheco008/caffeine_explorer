@@ -4,13 +4,10 @@
   flex-flow: row wrap;
   margin: 0 auto;
   justify-content: center;
-  /* width: 70%; */
-}
-
-@media only screen and (max-width: 601px) {
-  /* .promo-ad-img {
-  } */
 }
 
 @media only screen and (min-width: 602px) and (max-width: 1130px) {
+}
+@media only screen and (max-width: 601px) {
+ 
 }

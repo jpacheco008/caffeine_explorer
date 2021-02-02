@@ -31,7 +31,6 @@ li{
 }
 
 .nav-link:hover {
-text-decoration: underline;
 color: white;
 cursor: pointer;
 }
