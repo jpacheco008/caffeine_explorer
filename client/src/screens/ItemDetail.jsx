@@ -103,7 +103,7 @@ export default function ItemDetail() {
         <div className='coffee-data'>
           <div className='name-pic-container'>
             <div className='name-link-container'>
-      <Link to='/coffees' className='link-coffees'>Coffes/</Link>
+      <Link to='/coffees' className='link-coffees'>Coffees/</Link>
       <h3 className='blend-name'>{coffee.blend_name}</h3>
             </div>
       <img className='image' src={coffee.picture} alt="Can't find the beans"/> 
