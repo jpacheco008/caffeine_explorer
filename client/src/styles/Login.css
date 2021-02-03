@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Farsan&display=swap");
+
+.login-form {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  margin: 30px auto;
+}
+.login-title {
+  margin: 5px auto;
+  font-family: "Parisienne", cursive;
+  font-size: 30px;
+}
+.login-label {
+  margin: 2px auto;
+  font-family: "Farsan", cursive;
+}
+.login-links-container {
+  margin: 3px auto;
+}
+.login-link {
+  margin: 5px;
+  text-decoration: none;
+  color: black;
+}
+.login-button {
+  margin: 5px;
+}

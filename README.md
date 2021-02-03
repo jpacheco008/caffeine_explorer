@@ -121,16 +121,16 @@ src
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Planning            |    H     |     5 hrs      |     4 hrs     |    4 hrs    |
-| Create Back end     |    H     |     2 hrs      |     TBD       |     TBD     |
-| Back end Auth       |    H     |     3 hrs      |     TBD       |     TBD     |
-| Back end CRUD       |    H     |     5 hrs      |     TBD       |     TBD     |
-| Front end Auth      |    H     |     2 hrs      |     TBD       |     TBD     |
-| Front end CRUD      |    H     |     5 hrs      |     TBD       |     TBD     |
-| Styling             |    H     |     12 hrs     |     TBD       |     TBD     |
-| Responsive design   |    H     |     5 hrs      |     TBD       |     TBD     |
-| Post MVP            |    H     |     10 hrs     |     TBD       |     TBD     |
-| TOTAL               |          |     49 hrs     |     TBD       |     TBD     |
+| Planning            |    H     |     5 hrs      |     4 hrs     |    4hrs     |
+| Create Back end     |    H     |     2 hrs      |     TBD       |    5hrs     |
+| Back end Auth       |    H     |     3 hrs      |     TBD       |     1hr     |
+| Back end CRUD       |    H     |     5 hrs      |     TBD       |     6hrs    |
+| Front end Auth      |    H     |     2 hrs      |     TBD       |     2hrs    |
+| Front end CRUD      |    H     |     5 hrs      |     TBD       |     8hrs    |
+| Styling             |    H     |     12 hrs     |     TBD       |     10hr    |
+| Responsive design   |    H     |     5 hrs      |     TBD       |     4hrs    |
+| Post MVP            |    H     |     10 hrs     |     TBD       |     2hrs    |
+| TOTAL               |          |     49 hrs     |     TBD       |     42hrs   |
 
 
 <br>

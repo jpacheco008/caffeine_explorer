@@ -1,32 +1,133 @@
-@import url('https://fonts.googleapis.com/css2?family=Farsan&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Farsan&display=swap");
 
-.coffee-data{
+.coffee-data {
   display: flex;
   justify-content: space-around;
   margin: 30px auto;
 }
-.name-pic-container{
+.name-pic-container {
   display: flex;
   flex-flow: column;
   justify-content: center;
 }
-.blend-name{
+.name-link-container {
+  display: flex;
+  align-items: center;
+  margin: 15px;
+}
+.link-coffees {
+  text-decoration: none;
+  font-size: 40px;
+  font-family: "Farsan", cursive;
+  color: black;
+  font-weight: 800;
+}
+.blend-name {
   font-size: 40px;
   color: black;
   text-align: center;
+  font-family: "Farsan", cursive;
+  margin: 0;
 }
-.image{
+.image {
   width: 400px;
+  border-radius: 8px;
 }
-.coffee-stats-container{
+.coffee-stats-container {
   margin: 40px 0;
 }
 
-.coffee-stats{
-  font-family: 'Farsan', cursive;
+.coffee-stats {
+  font-family: "Farsan", cursive;
   font-size: 20px;
   margin: 15px auto;
 }
-.comments-container{
-  margin: 10px 40px;
+.add-fav {
+  font-family: "Farsan", cursive;
+  font-size: 20px;
+  margin: 15px auto;
+}
+.add-fav:hover {
+  cursor: pointer;
+}
+.comments-container {
+  margin: 10px 80px;
+}
+.comments-form {
+  display: flex;
+}
+.input-bar {
+  width: 500px;
+  height: 30px;
+}
+.posted-comment {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 500px;
+}
+.edit-icons {
+  width: 20px;
+  height: 20px;
+  margin: 8px;
+}
+.edit-icons:hover {
+  cursor: pointer;
+}
+@media only screen and (min-width: 602px) and (max-width: 1130px) {
+  .coffee-data {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+  }
+  .coffee-stats-container {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    margin: 10px;
+  }
+  .name-pic-container {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    margin: 10px auto;
+  }
+  .image {
+    width: 400px;
+    border-radius: 8px;
+    margin: 10px auto;
+  }
+  .coffee-stats {
+    text-align: center;
+    margin: 3px;
+  }
+}
+@media only screen and (max-width: 601px) {
+  .coffee-data {
+    display: flex;
+    flex-flow: column;
+    margin: 10px auto;
+  }
+  .name-link-container {
+    margin: 8px;
+  }
+  .name-pic-container {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    margin: 10px auto;
+  }
+  .image {
+    width: 300px;
+  }
+  .coffee-stats-container {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    margin: 10px 0;
+  }
+  .coffee-stats {
+    text-align: center;
+    margin: 3px;
+  }
 }
