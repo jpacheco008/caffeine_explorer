@@ -1,77 +1,76 @@
-@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
 
-.nav-container{
+.nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color:#574106;
-  height:150px;
+  background-color: #574106;
+  height: 150px;
   border-bottom: 1px groove black;
   color: white;
 }
-.logo{
+.logo {
   width: 150px;
   height: 150px;
-  /* margin: auto 50%; */
 }
-.welcome{
-  font-family: 'Parisienne', cursive;
+.welcome {
+  font-family: "Parisienne", cursive;
   margin: auto 40px;
   font-size: 20px;
 }
-li{
+li {
   display: inline;
 }
-.nav-link{
+.nav-link {
   color: white;
   margin: 10px;
-  font-family: 'Parisienne', cursive;
+  font-family: "Parisienne", cursive;
   text-decoration: none;
   font-size: 20px;
 }
 
 .nav-link:hover {
-color: white;
-cursor: pointer;
+  color: white;
+  cursor: pointer;
 }
 
-.site-title{
+.site-title {
   color: white;
 }
 
-nav ul{
+nav ul {
   display: flex;
   flex-flow: row;
   margin: auto 40px;
   padding: 0;
 }
 
-.signins{
+.signins {
   display: flex;
   align-items: center;
 }
 @media only screen and (max-width: 601px) {
-  .nav-container{
-    height:100px;
+  .nav-container {
+    height: 100px;
     width: 100vw;
   }
-  .logo{
+  .logo {
     width: 100px;
     height: 100px;
     margin: auto 10px;
   }
-  nav ul{
+  nav ul {
     margin: auto 10px;
   }
-  li{
+  li {
     font-size: 10px;
     margin: 5px;
-}
-.welcome{
-  font-size: 10px;
-}
-.nav-link{
-  font-size: 10px;
-  margin: 2px;
-}
+  }
+  .welcome {
+    font-size: 10px;
+  }
+  .nav-link {
+    font-size: 10px;
+    margin: 2px;
+  }
 }

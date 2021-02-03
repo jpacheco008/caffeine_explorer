@@ -4,7 +4,7 @@ import Layout from "./layouts/Layout";
 import Register from "./screens/Register";
 import Login from "./screens/Login";
 import MainContainer from "./containers/MainContainer";
-import './App.css'
+import "./App.css";
 import {
   loginUser,
   registerUser,
@@ -41,7 +41,7 @@ function App() {
     localStorage.removeItem("authToken");
     removeToken();
   };
-  //change
+
   return (
     <Layout currentUser={currentUser} handleLogout={handleLogout}>
       <Switch>

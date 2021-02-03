@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
 
-.landing-container{
-  background-image: url('https://www.wallpapertip.com/wmimgs/244-2443261_crowded-coffee-beans-wallpaper.jpg');
+.landing-container {
+  background-image: url("https://www.wallpapertip.com/wmimgs/244-2443261_crowded-coffee-beans-wallpaper.jpg");
   margin: 0;
   height: 100vw;
 }
-.text-container{
+.text-container {
   display: flex;
   flex-flow: column;
   justify-content: center;
 }
-.landing-title{
-  font-family: 'Parisienne', cursive;
+.landing-title {
+  font-family: "Parisienne", cursive;
   font-size: 40px;
   color: white;
   margin: auto;
@@ -19,8 +19,8 @@
   width: 60%;
   text-align: center;
 }
-.landing-link{
-  font-family: 'Parisienne', cursive;
+.landing-link {
+  font-family: "Parisienne", cursive;
   font-size: 25px;
   text-decoration: none;
   color: white;
@@ -30,12 +30,12 @@
   text-align: center;
 }
 @media only screen and (min-width: 602px) and (max-width: 1130px) {
-  .landing-container{
+  .landing-container {
     height: 100vw;
   }
 }
 @media only screen and (max-width: 601px) {
-  .landing-container{
+  .landing-container {
     height: 100vw;
   }
 }

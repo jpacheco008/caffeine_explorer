@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 export default function Profile(props) {
   const [profileData, setProfileData] = useState([]);
-  
+
   useEffect(() => {
     const fetchFavorites = async () => {
       const id = props.currentUser && props.currentUser.id;
@@ -17,13 +17,14 @@ export default function Profile(props) {
   }, [props.currentUser]);
 
   const handleFavDelete = async (id) => {
-    await deleteFavorites(id)
-    setProfileData(prevState => ({
+    await deleteFavorites(id);
+    setProfileData((prevState) => ({
       ...prevState,
-      favorites: prevState.favorites.filter(favorite => {
-      return favorite.id !== id})
-    }))
-  }
+      favorites: prevState.favorites.filter((favorite) => {
+        return favorite.id !== id;
+      }),
+    }));
+  };
 
   return (
     <div className="profile-list-container">
@@ -35,17 +36,21 @@ export default function Profile(props) {
           {profileData.favorites &&
             profileData.favorites.map((list, index) => {
               return (
-                <div className='profile-coffee-container' key={index}>
-                <Coffee
-                  id={list.coffee.id}
-                  blend_name={list.coffee.blend_name}
-                  imgURL={list.coffee.picture}
+                <div className="profile-coffee-container" key={index}>
+                  <Coffee
+                    id={list.coffee.id}
+                    blend_name={list.coffee.blend_name}
+                    imgURL={list.coffee.picture}
                   />
                   <button
-                    className='profile-coffee-button'
-                    onClick={()=>{handleFavDelete(list.id)}}
-                  >Remove</button>
-                  </div>
+                    className="profile-coffee-button"
+                    onClick={() => {
+                      handleFavDelete(list.id);
+                    }}
+                  >
+                    Remove
+                  </button>
+                </div>
               );
             })}
         </div>
