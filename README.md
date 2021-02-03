@@ -1,5 +1,5 @@
 # CAFFEINE EXPLORER README <!-- omit in toc -->
-![projectURL](https://modest-tesla-2c628d.netlify.app)
+Deployed URL: https://modest-tesla-2c628d.netlify.app
 
 - [Overview](#overview)
 - [MVP](#mvp)
