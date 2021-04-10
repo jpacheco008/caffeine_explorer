@@ -9,19 +9,22 @@
   transform: scale(1.08);
 }
 
+.details-container {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  width: 200px;
+  height: 170px;
+  background-color: #574106;
+  border-radius: 5px;
+}
+
 .coffee-img {
   width: 200px;
   object-fit: scale-down;
   border-radius: 8px;
 }
 
-.details-container {
-  display: flex;
-  flex-flow: column;
-  width: 200px;
-  background-color: #574106;
-  border-radius: 5px;
-}
 
 .coffee-blend-name {
   margin: 0 10px;

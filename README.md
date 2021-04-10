@@ -1,4 +1,5 @@
 # CAFFEINE EXPLORER README <!-- omit in toc -->
+Deployed URL: https://modest-tesla-2c628d.netlify.app
 
 - [Overview](#overview)
 - [MVP](#mvp)
@@ -122,15 +123,15 @@ src
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
 | Planning            |    H     |     5 hrs      |     4 hrs     |    4hrs     |
-| Create Back end     |    H     |     2 hrs      |     TBD       |    5hrs     |
-| Back end Auth       |    H     |     3 hrs      |     TBD       |     1hr     |
-| Back end CRUD       |    H     |     5 hrs      |     TBD       |     6hrs    |
-| Front end Auth      |    H     |     2 hrs      |     TBD       |     2hrs    |
-| Front end CRUD      |    H     |     5 hrs      |     TBD       |     8hrs    |
-| Styling             |    H     |     12 hrs     |     TBD       |     10hr    |
-| Responsive design   |    H     |     5 hrs      |     TBD       |     4hrs    |
-| Post MVP            |    H     |     10 hrs     |     TBD       |     2hrs    |
-| TOTAL               |          |     49 hrs     |     TBD       |     42hrs   |
+| Create Back end     |    H     |     2 hrs      |     5hrs      |    5hrs     |
+| Back end Auth       |    H     |     3 hrs      |     1hr       |     1hr     |
+| Back end CRUD       |    H     |     5 hrs      |     6hrs      |     6hrs    |
+| Front end Auth      |    H     |     2 hrs      |     2hrs      |     2hrs    |
+| Front end CRUD      |    H     |     5 hrs      |     9hrs      |     8hrs    |
+| Styling             |    H     |     12 hrs     |     10hrs     |     10hr    |
+| Responsive design   |    H     |     5 hrs      |     4hrs      |     4hrs    |
+| Post MVP            |    H     |     10 hrs     |     2hrs      |     2hrs    |
+| TOTAL               |          |     49 hrs     |     43hrs     |     42hrs   |
 
 
 <br>
@@ -155,7 +156,55 @@ src
 ***
 
 ## Code Showcase
-
-
+```
+const comments =
+    coffee &&
+    coffee.comments.map((comment) => {
+      return (
+        <div key={comment.id} className="posted-comment">
+          <h5 className="comment">
+            {" "}
+            {editMode && currentEdit === comment.id ? (
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  handleUpdate(e, comment.id, formData);
+                  setEditMode(false);
+                  setCurrentEdit(null);
+                }}
+              >
+                <input
+                  type="text"
+                  name="content"
+                  placeholder="Edit Comment"
+                  value={content}
+                  onChange={handleChange}
+                />
+                <br />
+                <button>Submit</button>
+              </form>
+            ) : (
+              comment.content
+            )}
+          </h5>
+          <div className="edit-icons-container">
+            <img
+              className="edit-icons"
+              src="https://cdn1.iconfinder.com/data/icons/internet-28/48/8-512.png"
+              alt="edit"
+              onClick={(e) => enterEditMode(e, comment.id)}
+            />
+            <img
+              className="edit-icons"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlK-PGF6t3CNUCzN8V0KIirZjBh6cJMmZOtA&usqp=CAU"
+              alt="delete"
+              onClick={(e) => handleDelete(e, comment.id)}
+            />
+          </div>
+        </div>
+      );
+    });
+```
 
 ## Code Issues & Resolutions
+- Getting the comment section to work was a challenge. Every handle for the different API calls were vastly different since so much information is being passed down thru nested props. Destructuring all the props helped visualizing it better.
